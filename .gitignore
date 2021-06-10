@@ -8,6 +8,9 @@ config.py
 # .DS Store
 .DS_Store
 
+# Actual images
+images/**
+
 # VSS
 .vscode
 .vscode/*
