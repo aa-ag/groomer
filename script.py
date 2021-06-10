@@ -11,8 +11,9 @@ def rename_files():
      renames them.
     '''
     # testing os.listdir() function
-    for image in os.listdir('images'):
-        print(image)
+    for i, image in enumerate(os.listdir('images')):
+        file_name, file_extension = os.path.splitext(image)
+        print(i, file_name, file_extension)
 
 
 ############------------ DRIVER CODE ------------############
