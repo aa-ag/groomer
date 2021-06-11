@@ -42,9 +42,15 @@ def rename_files():
 
 
 def resize_images():
+    '''
+     uses functions from PIL to 
+     manipulate image opened
+    '''
     test_image_path = 'images/brand_a_header.jpeg'
     test_image = Image.open(test_image_path)
-    test_image.rotate(90).show()
+    (width, height) = (300, 250)
+    resized_image = test_image.resize((width, height))
+    resized_image.show()
 
 
 ############------------ DRIVER CODE ------------############
