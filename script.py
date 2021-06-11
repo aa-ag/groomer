@@ -46,6 +46,9 @@ def resize_images():
      uses functions from PIL to 
      manipulate image opened
     '''
+    # import test_brands list
+    global test_brands
+
     # logic to open one image,
     # set size expected, and resize and show
     # resized image
@@ -58,17 +61,17 @@ def resize_images():
 
     # set source and destination of images
     # where to go get the images from/put them in
-    # source_path = '<PATH WHERE IMAGES ARE>'
-
     source_path = '/Users/aaronaguerrevere/Documents/portfolio/groomer/images/'
     destination_path = '/Users/aaronaguerrevere/Documents/portfolio/groomer/resized_images/'
 
-    for i, image in enumerate(os.listdir('images')):
+    images = os.listdir('images')
+
+    for brand, image in zip(test_brands, images):
         one_image = Image.open(source_path + image)
         (width, height) = (300, 250)
         resized_image = one_image.resize((width, height))
         resized_image.save(
-            f'{destination_path}/{i+1}_resized.jpg', 'JPEG', quality=90)
+            f'{destination_path}/{brand}_name_convention.jpg', 'JPEG', quality=90)
 
 
 ############------------ DRIVER CODE ------------############
