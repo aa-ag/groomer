@@ -10,6 +10,10 @@ config.py
 
 # actual images
 images/**
+resized_images/**
+*.jpg
+*.png
+*.jpeg
 
 # VSS
 .vscode

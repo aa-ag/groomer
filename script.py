@@ -50,21 +50,25 @@ def resize_images():
     # set size expected, and resize and show
     # resized image
 
-    test_image_path = 'images/brand_a_header.jpeg'
-    test_image = Image.open(test_image_path)
-    (width, height) = (300, 250)
-    resized_image = test_image.resize((width, height))
-    resized_image.save('resized.jpg', 'JPEG', quality=90)
+    # test_image_path = 'images/brand_a_header.jpeg'
+    # test_image = Image.open(test_image_path)
+    # (width, height) = (300, 250)
+    # resized_image = test_image.resize((width, height))
+    # resized_image.save('resized.jpg', 'JPEG', quality=90)
 
     # set source and destination of images
     # where to go get the images from/put them in
     # source_path = '<PATH WHERE IMAGES ARE>'
 
-    # for i, image in enumerate(os.listdir('images')):
-    #     one_image = Image.open(source_path + image)
-    #     (width, height) = (300, 250)
-    #     resized_image = one_image.resize((width, height))
-    #     resized_image.save('resized.jpg', 'JPEG', quality=90)
+    source_path = '/Users/aaronaguerrevere/Documents/portfolio/groomer/images/'
+    destination_path = '/Users/aaronaguerrevere/Documents/portfolio/groomer/resized_images/'
+
+    for i, image in enumerate(os.listdir('images')):
+        one_image = Image.open(source_path + image)
+        (width, height) = (300, 250)
+        resized_image = one_image.resize((width, height))
+        resized_image.save(
+            f'{destination_path}/{i+1}_resized.jpg', 'JPEG', quality=90)
 
 
 ############------------ DRIVER CODE ------------############
