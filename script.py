@@ -40,6 +40,11 @@ def rename_files():
     #               os.path.join(destination_path, new_name))
 
 
+def resize_images():
+    pass
+
+
 ############------------ DRIVER CODE ------------############
 if __name__ == "__main__":
-    rename_files()
+    # rename_files()
+    resize_images()
