@@ -3,7 +3,8 @@ import os
 
 
 ############------------ GLOBAL VARIABLES ------------############
-test_brands = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix']
+test_brands = ['i', 'ii', 'iii', 'iv', 'v',
+               'vi', 'vii', 'viii', 'ix']
 
 
 ############------------ FUNCTIONS ------------############
@@ -26,12 +27,15 @@ def rename_files():
     # zip images & brands to combine the two
     # in creating new file names
     for brand, image_name in zip(test_brands, images):
-        print(brand, image_name)
+        file_extension = image_name.split('.')[1]
+        new_name = f"{brand}_header.{file_extension}"
+        os.rename(os.path.join(source_path, image_name),
+                  os.path.join(destination_path, new_name))
 
     # use enumerate to add count/n to new title
     # for i, image_name in enumerate(images):
-    #     existing_name, file_extension = image_name.split('.')
-    #     new_name = f"{i}_header.png"
+    #     file_extension = image_name.split('.')[1]
+    #     new_name = f"{i}_header.{file_extension}"
     #     os.rename(os.path.join(source_path, image_name),
     #               os.path.join(destination_path, new_name))
 
