@@ -3,8 +3,8 @@ import os
 
 
 ############------------ GLOBAL VARIABLES ------------############
-test_brands = ['i', 'ii', 'iii', 'iv', 'v',
-               'vi', 'vii', 'viii', 'ix']
+test_brands = ['brand_a_', 'brand_b_', 'brand_c_', 'brand_d_', 'brand_e_',
+               'brand_f_', 'brand_g_', 'brand_h_', 'brand_i_']
 
 
 ############------------ FUNCTIONS ------------############
@@ -28,7 +28,7 @@ def rename_files():
     # in creating new file names
     for brand, image_name in zip(test_brands, images):
         file_extension = image_name.split('.')[1]
-        new_name = f"{brand}_header.{file_extension}"
+        new_name = f"{brand}header.{file_extension}"
         os.rename(os.path.join(source_path, image_name),
                   os.path.join(destination_path, new_name))
 
