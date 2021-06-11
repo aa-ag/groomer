@@ -1,10 +1,11 @@
 ############------------ IMPORTS ------------############
 import os
+import PIL
 
 
 ############------------ GLOBAL VARIABLES ------------############
-test_brands = ['brand_a_', 'brand_b_', 'brand_c_', 'brand_d_', 'brand_e_',
-               'brand_f_', 'brand_g_', 'brand_h_', 'brand_i_']
+test_brands = ['brand_a', 'brand_b', 'brand_c', 'brand_d', 'brand_e',
+               'brand_f', 'brand_g', 'brand_h', 'brand_i']
 
 
 ############------------ FUNCTIONS ------------############
@@ -28,7 +29,7 @@ def rename_files():
     # in creating new file names
     for brand, image_name in zip(test_brands, images):
         file_extension = image_name.split('.')[1]
-        new_name = f"{brand}header.{file_extension}"
+        new_name = f"{brand}_header.{file_extension}"
         os.rename(os.path.join(source_path, image_name),
                   os.path.join(destination_path, new_name))
 
@@ -41,7 +42,7 @@ def rename_files():
 
 
 def resize_images():
-    pass
+    test_image = '/Users/aaronaguerrevere/Documents/portfolio/dadjokes/project/static/media/thomas-jensen-h3vT1Kp0FxA-unsplash.jpg'
 
 
 ############------------ DRIVER CODE ------------############
