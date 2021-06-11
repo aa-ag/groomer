@@ -1,6 +1,6 @@
 ############------------ IMPORTS ------------############
 import os
-import PIL
+from PIL import Image
 
 
 ############------------ GLOBAL VARIABLES ------------############
@@ -42,7 +42,9 @@ def rename_files():
 
 
 def resize_images():
-    test_image = '/Users/aaronaguerrevere/Documents/portfolio/dadjokes/project/static/media/thomas-jensen-h3vT1Kp0FxA-unsplash.jpg'
+    test_image_path = 'images/brand_a_header.jpeg'
+    test_image = Image.open(test_image_path)
+    test_image.rotate(90).show()
 
 
 ############------------ DRIVER CODE ------------############
