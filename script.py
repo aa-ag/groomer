@@ -66,12 +66,13 @@ def resize_images():
 
     images = os.listdir('images')
 
-    for brand, image in zip(test_brands, images):
-        one_image = Image.open(source_path + image)
+    for brand, image_name in zip(test_brands, images):
+        file_extension = image_name.split('.')[1]
+        actual_image = Image.open(source_path + image_name)
         (width, height) = (300, 250)
-        resized_image = one_image.resize((width, height))
+        resized_image = actual_image.resize((width, height))
         resized_image.save(
-            f'{destination_path}/{brand}_name_convention.jpg', 'JPEG', quality=90)
+            f'{destination_path}/{brand}_name_convention.{file_extension}')
 
 
 ############------------ DRIVER CODE ------------############
